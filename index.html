@@ -59,10 +59,6 @@
         </div>
       </section>
 
-
-
-
-
       <!-- AULAS DO DIA -->
       <section class="classes_section">
         <h3 class="section_title">📚 Suas Aulas Hoje</h3>
@@ -94,11 +90,42 @@
           <span class="material-symbols-outlined">arrow_back</span>
           <span>Voltar</span>
         </button>
+
+        <!-- Botão que abre o modal -->
+        <button id="btn_abrir_modal" class="btn_voltar" onclick="abrirModal()">
+          <span class="material-symbols-outlined">add</span>
+          <span>Novo Auxílio</span>
+        </button>
+
         <h2>💰 Meus Auxílios</h2>
       </div>
+
       <div id="lista_auxilios" class="auxilios_grid"></div>
     </main>
   </div>
+  
+<!-- MODAL DE AUXÍLIO -->
+<div id="modal_auxilio" class="modal">
+  <div class="modal_content">
+    <button class="modal_close" onclick="fecharModal()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <h2>Detalhes do Auxílio</h2>
+
+    <input id="Title"type="text" class="modal_input" placeholder="Título">
+    <input id="Value" type="text" class="modal_input" placeholder="Valor">
+    <input id="Status" type="text" class="modal_input" placeholder="Status">
+    <input id="Date" type="date" class="modal_input" placeholder="Data">
+    <input id="Observation" type="text" class="modal_input" placeholder="Observação">
+
+    <div class="modal_footer">
+      <button class="modal_btn" onclick="salvarModal()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+
 
   <script src="scripts.js"></script>
 </body>

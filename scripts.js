@@ -209,3 +209,40 @@ function carregarAuxilios() {
 function toggleProfile() {
   console.log("Perfil clicado");
 }
+
+// ABRIR O MODAL
+function abrirModal() {
+    const modal = document.getElementById('modal_auxilio');
+    modal.classList.add('show');
+}
+
+// FECHAR O MODAL
+function fecharModal() {
+    const modal = document.getElementById('modal_auxilio');
+    modal.classList.remove('show');
+}
+auxilio = {nome: "", valorMensal: "", status: "", proximaDataPagamento: "", descricao: ""}
+document.getElementById("Title").addEventListener("change", function (e) {
+  auxilio.nome = e.target.value;
+});
+document.getElementById("Value").addEventListener("change", function (e) {
+  auxilio.valorMensal = e.target.value;
+});
+document.getElementById("Status").addEventListener("change", function (e) {
+  auxilio.status = e.target.value;
+});
+document.getElementById("Date").addEventListener("change", function (e) {
+  auxilio.proximaDataPagamento = e.target.value;
+});
+document.getElementById("Observation").addEventListener("change", function (e) {
+  auxilio.descricao = e.target.value;
+});
+
+
+function salvarModal(){
+  auxilios.push(auxilio);
+  console.log("auxilios:", auxilios)
+  console.log("auxilio:", auxilio)
+  fecharModal();
+  carregarAuxilios();
+}
