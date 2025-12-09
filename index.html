@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Inatel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- MENU LATERAL -->
+  <aside id="menu_aba">
+    <div class="menu_header">
+      <h3>Temas</h3>
+    </div>
+    <nav class="menu_nav">
+      <button class="menu_bot" onclick="changeColor('inatel')">
+        <span class="material-symbols-outlined">palette</span>
+        <span>Tema Inatel</span>
+      </button>
+      <button class="menu_bot" onclick="changeColor('dark')">
+        <span class="material-symbols-outlined">palette</span>
+        <span>Tema Dark</span>
+      </button>
+    </nav>
+    <div class="menu_divider"></div>
+    <button class="menu_bot menu_auxilios" onclick="closeMenu(); abrirAuxilios();">
+      <span class="material-symbols-outlined">help</span>
+      <span>Meus Auxílios</span>
+    </button>
+  </aside>
+
+  <!-- CABEÇALHO -->
+  <header id="head">
+    <button id="menu" class="menu_toggle" onclick="openMenu()">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="header_logo">
+      <h1>Inatel</h1>
+    </div>
+    <button class="profile_btn" onclick="toggleProfile()">
+      <span class="material-symbols-outlined">account_circle</span>
+    </button>
+  </header>
+
+  <!-- TELA PRINCIPAL -->
+  <div id="tela_principal" class="main_screen">
+    <main class="main_content">
+
+      <!-- GREETING SECTION -->
+      <section class="greeting_section">
+        <div class="greeting_card">
+          <div class="greeting_text">
+            <h2 id="user_name">Olá, Igor! 👋</h2>
+            <p>Bem-vindo ao seu portal acadêmico</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- AULAS DO DIA -->
+      <section class="classes_section">
+        <h3 class="section_title">📚 Suas Aulas Hoje</h3>
+        <aulas-component id="componente"></aulas-component>
+      </section>
+
+      <!-- CARROSSEL DE EVENTOS -->
+      <section class="events_section">
+        <h3 class="section_title">🎉 Próximos Eventos</h3>
+        <div class="carousel-container">
+          <div class="carousel"></div>
+          <button id="prevBtn" class="carousel_btn prev">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button id="nextBtn" class="carousel_btn next">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- TELA DE AUXÍLIOS -->
+  <div id="tela_auxilios" class="aux_screen">
+    <main class="main_content">
+      <div class="aux_header">
+        <button onclick="voltarHome()" class="btn_voltar">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <span>Voltar</span>
+        </button>
+        <h2>💰 Meus Auxílios</h2>
+      </div>
+      <div id="lista_auxilios" class="auxilios_grid"></div>
+    </main>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
